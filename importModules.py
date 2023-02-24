@@ -3,9 +3,9 @@ import os
 import pandas
 
 while True:
-    if os.path.exists("files/vegi.txt"):
-        with open("files/vegi.txt") as file:
-            print(file.read())
+    if os.path.exists("files/temps_today.csv"):
+        data = pandas.read_csv("files/temps_today.csv")
+        print(data.mean()["st1"])
     else:
         print("File does not exist.")
     time.sleep(10)
